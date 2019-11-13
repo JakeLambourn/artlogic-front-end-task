@@ -1,0 +1,138 @@
+body {
+  margin:0;
+  padding: 0;
+  font-family: Helvetica, sans-serif ;
+
+  .col-left {
+    width: 45%;
+    height: 100vh;
+    margin:0;
+    padding:0;
+    float: left;
+    background-image: url('../img/background.jpg');
+    background-size: cover;
+    color: #ffffff;
+
+    .container {
+      height: 100%;
+      position: relative;
+      padding-left: 50px;
+      overflow: hidden;
+
+      .title-wrapper {
+        margin-top: 50px;
+
+        .title {
+          font-size: 32px;
+          margin-top: 0px;
+        }
+      }
+
+      .header-wrapper {
+        position: absolute;
+        top: 50%;
+        margin-top: -140px;
+
+
+        h1 {
+          font-size: 60px;
+        }
+      }
+
+      // Tablet View
+      @media only screen and (max-width: 1080px) {
+        .header-wrapper {
+          //margin-top:50%;
+
+          h1 {
+            font-size:50px;
+          }
+        }
+      }
+
+      // Mobile View
+      @media only screen and (max-width: 500px) {
+        .header-wrapper {
+          //margin-top:50%;
+
+          h1 {
+            font-size:40px;
+          }
+        }
+      }
+
+      .subheader-wrapper {
+        position: absolute;
+        width: 300px;
+        bottom: 30px;
+
+        h2 {
+          position: relative;
+          padding-top: 20px;
+
+          &:before {
+            top: -6px;
+            position: absolute;
+            left: 0;
+            width: 40px;
+            content: '';
+            border-top: 2px solid #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  .col-right {
+    width: 55%;
+    float: right;
+
+    .container {
+      margin: 50px;
+
+      h2 {
+        font-size: 32px;
+      }
+
+      #accordion {
+        border-bottom: 1px solid #d8d8d8;
+
+        h3 {
+            font-size:14px;
+
+            img {
+              float: right;
+              width: 10px;
+              margin-top: 5px;
+            }
+
+        }
+        .open img {
+          transform: rotate(180deg);
+          transition: .5s;
+        }
+
+
+        .accordion-row {
+          border-top: 1px solid #d8d8d8;
+
+          .accordion-body {
+            padding-bottom:20px;
+            color: #555555;
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+
+    }
+  }
+
+  // Single column view in tablet and mobile view
+  @media only screen and (max-width: 1024px) {
+    .col-right, .col-left {
+      width:100%;
+    }
+  }
+
+}
